@@ -23,7 +23,7 @@ const chipCls: Record<Tone, string> = {
 };
 
 function Calendario() {
-  const [y0, m0] = HOY.split("-").map(Number);
+  const y0 = Number(HOY.slice(0, 4)); const m0 = Number(HOY.slice(5, 7));
   const [ym, setYm] = useState({ y: y0, m: m0 - 1 });
   const nav = useNavigate();
   const first = new Date(ym.y, ym.m, 1);

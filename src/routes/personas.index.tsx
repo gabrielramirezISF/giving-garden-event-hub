@@ -18,7 +18,7 @@ export const Route = createFileRoute("/personas/")({
 });
 
 const PAGE = 50;
-const ordenPrio = Object.fromEntries(prioridades.map((p, i) => [p, i]));
+const ordenPrio = Object.fromEntries(prioridades.map((p, i) => [p, i])) as Record<Prioridad, number>;
 
 function Personas() {
   const [q, setQ] = useState("");
