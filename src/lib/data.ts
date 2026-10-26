@@ -153,6 +153,7 @@ function genParticipaciones(): Participacion[] {
     const resto = personas.filter((p) => !chosen.includes(p) && !excluidos(p));
     for (let k = 0; k < c.walk; k++) {
       const p = resto[k * 3];
+      if (!p) continue;
       out.push({ personaId: p.id, codigo, estado: "Llegó", sinInscripcion: true, horaLlegada: codigo === "clinica-octubre" ? `17:${String(20 + k * 7)}` : `10:${String(10 + k * 4).padStart(2, "0")}`, origenLlegada: "QR" });
     }
   }
@@ -180,7 +181,7 @@ export const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "vier
 
 export function fechaLarga(iso: string) {
   const d = new Date(iso + "T12:00:00");
-  return `${DIAS[d.getDay()]} ${d.getDate()} de ${MESES_LARGO[d.getMonth()].toLowerCase()} de ${d.getFullYear()}`;
+  return `${DIAS[d.getDay()]} ${d.getDate()} de ${(MESES_LARGO[d.getMonth()] ?? "").toLowerCase()} de ${d.getFullYear()}`;
 }
 
 export const ultimosCambios = [
