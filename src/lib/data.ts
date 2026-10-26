@@ -75,7 +75,7 @@ function rng(seed: number) {
   };
 }
 const r = rng(42);
-const pick = <T,>(a: readonly T[]) => a[Math.floor(r() * a.length)];
+const pick = <T,>(a: readonly T[]): T => a[Math.floor(r() * a.length)] as T;
 
 const nombres = ["Camila", "Matías", "Valentina", "Benjamín", "Josefa", "Tomás", "Antonia", "Vicente", "Catalina", "Martín", "Fernanda", "Diego", "Isidora", "Joaquín", "Javiera", "Felipe", "Constanza", "Sebastián", "Francisca", "Nicolás", "Daniela", "Cristóbal", "Paula", "Ignacio", "Macarena", "Rodrigo", "Trinidad", "Andrés", "Carolina", "Pablo"];
 const apellidos = ["González", "Muñoz", "Rojas", "Díaz", "Pérez", "Soto", "Contreras", "Silva", "Martínez", "Sepúlveda", "Morales", "Rodríguez", "López", "Fuentes", "Hernández", "Torres", "Araya", "Flores", "Espinoza", "Valenzuela", "Castillo", "Tapia", "Reyes", "Gutiérrez", "Castro", "Vargas", "Álvarez", "Vásquez", "Carrasco", "Cortés"];
