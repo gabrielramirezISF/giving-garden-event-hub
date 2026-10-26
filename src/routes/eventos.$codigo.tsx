@@ -116,7 +116,7 @@ function Resumen({ e, go }: { e: Evento; go: (t: Tab) => void }) {
             ))}
           </div>
         )}
-        {porDia.length > 0 && <div className="mt-2 flex justify-between text-xs text-muted-foreground"><span>{porDia[0][0]}</span><span>{porDia.at(-1)![0]}</span></div>}
+        {porDia.length > 0 && <div className="mt-2 flex justify-between text-xs text-muted-foreground"><span>{porDia[0]?.[0]}</span><span>{porDia.at(-1)![0]}</span></div>}
       </Card>
     </div>
   );
