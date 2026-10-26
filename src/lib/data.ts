@@ -17,14 +17,14 @@ export interface Evento {
   nombre: string;
   tipo: TipoEvento;
   fecha: string; // ISO yyyy-mm-dd
-  horaInicio?: string;
-  horaFin?: string;
-  lugar?: string;
-  direccion?: string;
-  cupo?: number;
+  horaInicio?: string | undefined;
+  horaFin?: string | undefined;
+  lugar?: string | undefined;
+  direccion?: string | undefined;
+  cupo?: number | undefined;
   estado: EstadoEvento;
   registroAbierto: boolean;
-  descripcion?: string;
+  descripcion?: string | undefined;
 }
 
 export interface Persona {
@@ -38,18 +38,18 @@ export interface Persona {
   prioridad: Prioridad;
   estado: EstadoContacto;
   puntaje: number;
-  ultimoEvento?: string;
+  ultimoEvento?: string | undefined;
 }
 
 export interface Participacion {
   personaId: string;
   codigo: string;
   estado: EstadoInvitado;
-  fechaInscripcion?: string;
-  origen?: "Formulario" | "Manual" | "Importación" | "QR";
-  horaLlegada?: string;
-  origenLlegada?: "QR" | "Manual";
-  sinInscripcion?: boolean;
+  fechaInscripcion?: string | undefined;
+  origen?: "Formulario" | "Manual" | "Importación" | "QR" | undefined;
+  horaLlegada?: string | undefined;
+  origenLlegada?: "QR" | "Manual" | undefined;
+  sinInscripcion?: boolean | undefined;
 }
 
 export const HOY = "2026-10-26";
