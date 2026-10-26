@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CalendarioRouteImport } from './routes/calendario'
+import { Route as EventosIndexRouteImport } from './routes/eventos.index'
+import { Route as EventosCodigoRouteImport } from './routes/eventos.$codigo'
+import { Route as EventosNuevoRouteImport } from './routes/eventos.nuevo'
+import { Route as PersonasIndexRouteImport } from './routes/personas.index'
+import { Route as PersonasIdRouteImport } from './routes/personas.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalendarioRoute = CalendarioRouteImport.update({
+  id: '/calendario',
+  path: '/calendario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventosIndexRoute = EventosIndexRouteImport.update({
+  id: '/eventos/',
+  path: '/eventos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventosCodigoRoute = EventosCodigoRouteImport.update({
+  id: '/eventos/$codigo',
+  path: '/eventos/$codigo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventosNuevoRoute = EventosNuevoRouteImport.update({
+  id: '/eventos/nuevo',
+  path: '/eventos/nuevo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonasIndexRoute = PersonasIndexRouteImport.update({
+  id: '/personas/',
+  path: '/personas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonasIdRoute = PersonasIdRouteImport.update({
+  id: '/personas/$id',
+  path: '/personas/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/eventos/$codigo': typeof EventosCodigoRoute
+  '/eventos/nuevo': typeof EventosNuevoRoute
+  '/personas/$id': typeof PersonasIdRoute
+  '/eventos/': typeof EventosIndexRoute
+  '/personas/': typeof PersonasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/eventos/$codigo': typeof EventosCodigoRoute
+  '/eventos/nuevo': typeof EventosNuevoRoute
+  '/personas/$id': typeof PersonasIdRoute
+  '/eventos': typeof EventosIndexRoute
+  '/personas': typeof PersonasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/eventos/$codigo': typeof EventosCodigoRoute
+  '/eventos/nuevo': typeof EventosNuevoRoute
+  '/personas/$id': typeof PersonasIdRoute
+  '/eventos/': typeof EventosIndexRoute
+  '/personas/': typeof PersonasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/calendario'
+    | '/eventos/$codigo'
+    | '/eventos/nuevo'
+    | '/personas/$id'
+    | '/eventos/'
+    | '/personas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/calendario'
+    | '/eventos/$codigo'
+    | '/eventos/nuevo'
+    | '/personas/$id'
+    | '/eventos'
+    | '/personas'
+  id:
+    | '__root__'
+    | '/'
+    | '/calendario'
+    | '/eventos/$codigo'
+    | '/eventos/nuevo'
+    | '/personas/$id'
+    | '/eventos/'
+    | '/personas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalendarioRoute: typeof CalendarioRoute
+  EventosCodigoRoute: typeof EventosCodigoRoute
+  EventosNuevoRoute: typeof EventosNuevoRoute
+  PersonasIdRoute: typeof PersonasIdRoute
+  EventosIndexRoute: typeof EventosIndexRoute
+  PersonasIndexRoute: typeof PersonasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calendario': {
+      id: '/calendario'
+      path: '/calendario'
+      fullPath: '/calendario'
+      preLoaderRoute: typeof CalendarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventos/': {
+      id: '/eventos/'
+      path: '/eventos'
+      fullPath: '/eventos/'
+      preLoaderRoute: typeof EventosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventos/$codigo': {
+      id: '/eventos/$codigo'
+      path: '/eventos/$codigo'
+      fullPath: '/eventos/$codigo'
+      preLoaderRoute: typeof EventosCodigoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventos/nuevo': {
+      id: '/eventos/nuevo'
+      path: '/eventos/nuevo'
+      fullPath: '/eventos/nuevo'
+      preLoaderRoute: typeof EventosNuevoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personas/': {
+      id: '/personas/'
+      path: '/personas'
+      fullPath: '/personas/'
+      preLoaderRoute: typeof PersonasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personas/$id': {
+      id: '/personas/$id'
+      path: '/personas/$id'
+      fullPath: '/personas/$id'
+      preLoaderRoute: typeof PersonasIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalendarioRoute: CalendarioRoute,
+  EventosCodigoRoute: EventosCodigoRoute,
+  EventosNuevoRoute: EventosNuevoRoute,
+  PersonasIdRoute: PersonasIdRoute,
+  EventosIndexRoute: EventosIndexRoute,
+  PersonasIndexRoute: PersonasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
