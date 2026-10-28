@@ -55,7 +55,7 @@ export interface Participacion {
 export const HOY = "2026-10-26";
 
 export const eventos: Evento[] = [
-  { codigo: "anual-2026", nombre: "Encuentro Anual ISF 2026", tipo: "Evento anual", fecha: "2026-11-21", horaInicio: "09:30", horaFin: "18:00", lugar: "Centro Cultural GAM", direccion: "Av. Libertador B. O'Higgins 227, Santiago", cupo: 250, estado: "Inscripción abierta", registroAbierto: false, descripcion: "La jornada anual que reúne a voluntariado, equipo, socios y aliados de ISF." },
+  { codigo: "anual-2026", nombre: "Encuentro Anual ISF 2026", tipo: "Evento anual", fecha: "2026-11-11", horaInicio: "18:00", horaFin: "20:30", lugar: "Colegio de Ingenieros", cupo: 150, estado: "Inscripción abierta", registroAbierto: false, descripcion: "La jornada anual que reúne a voluntariado, equipo, socios y aliados de ISF." },
   { codigo: "mentoria-octubre", nombre: "Mentoría grupal · Emprendimiento social", tipo: "Mentoría", fecha: "2026-10-28", horaInicio: "18:30", horaFin: "20:00", lugar: "Oficina ISF", direccion: "Providencia 1208, Of. 401", cupo: 30, estado: "Convocando", registroAbierto: false },
   { codigo: "clinica-noviembre", nombre: "Clínica de proyectos comunitarios", tipo: "Clínica", fecha: "2026-11-07", horaInicio: "10:00", estado: "Borrador", registroAbierto: false },
   { codigo: "reunion-socios-nov", nombre: "Reunión de socios y aliados", tipo: "Reunión", fecha: "2026-11-12", horaInicio: "08:30", horaFin: "10:00", lugar: "Online (Meet)", estado: "Convocando", registroAbierto: false },
