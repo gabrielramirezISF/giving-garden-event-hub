@@ -17,6 +17,8 @@ export const Route = createFileRoute("/eventos/$codigo")({
       { name: "description", content: loaderData ? `Detalle de ${loaderData.nombre}` : "Detalle del evento" },
       { property: "og:title", content: loaderData ? `${loaderData.nombre} · ISF` : "Evento · ISF" },
       { property: "og:description", content: "Invitados, inscritos y check-in del evento." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Detalle,
@@ -225,7 +227,7 @@ function CheckIn({ e }: { e: Evento }) {
         <div className="text-sm text-muted-foreground">llegaron de los inscritos</div>
         <div className="mt-4 grid grid-cols-2 gap-2 text-sm"><div className="rounded-lg bg-muted p-2"><b>{sinIns}</b> sin inscripción</div><div className="rounded-lg bg-muted p-2"><b>{llegaronIns + sinIns}</b> en el lugar</div></div>
       </Card>
-      <div className="grid grid-cols-2 gap-2"><SoftButton className="justify-center py-3"><QrCode className="size-4" /> Mostrar QR</SoftButton><SoftButton className="justify-center py-3"><Printer className="size-4" /> Lista de respaldo</SoftButton></div>
+      <div className="grid grid-cols-2 gap-2"><Link to="/eventos/$codigo/qr" params={{ codigo: e.codigo }} className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-card px-3 py-3 text-sm font-medium hover:bg-accent"><QrCode className="size-4" /> Mostrar QR</Link><SoftButton className="justify-center py-3"><Printer className="size-4" /> Lista de respaldo</SoftButton></div>
       <Card className="p-4">
         <div className="relative"><Search className="absolute left-3 top-3 size-4 text-muted-foreground" /><input value={q} onChange={(ev) => setQ(ev.target.value)} placeholder="Buscar por nombre o correo para marcar llegada" className="w-full rounded-lg border border-input bg-card py-2.5 pl-9 pr-3 outline-none focus:ring-2 focus:ring-ring/30" /></div>
         {pendientes.map((per) => (

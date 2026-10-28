@@ -12,6 +12,7 @@ export function TopNav() {
     { to: "/calendario", label: "Calendario", icon: CalendarDays },
     { to: "/personas", label: "Personas", icon: Users },
   ] as const;
+  if (path.startsWith("/checkin/") || /^\/eventos\/[^/]+\/qr\/?$/.test(path)) return null;
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-[1200px] items-center gap-6 px-4">

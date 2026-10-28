@@ -10,6 +10,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "CRM de eventos y contactos de ISF." },
       { property: "og:title", content: "ISF Eventos" },
       { property: "og:description", content: "CRM de eventos y contactos de ISF." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
 });

@@ -16,6 +16,8 @@ export const Route = createFileRoute("/personas/$id")({
       { name: "description", content: "Ficha de contacto en ISF." },
       { property: "og:title", content: loaderData ? `${loaderData.nombre} · ISF` : "Persona · ISF" },
       { property: "og:description", content: "Ficha de contacto en ISF." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Ficha,
