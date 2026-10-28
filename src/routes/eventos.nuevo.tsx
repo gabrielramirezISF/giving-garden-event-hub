@@ -12,6 +12,8 @@ export const Route = createFileRoute("/eventos/nuevo")({
       { name: "description", content: "Crear un nuevo evento de ISF." },
       { property: "og:title", content: "Crear evento · ISF" },
       { property: "og:description", content: "Crear un nuevo evento de ISF." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Nuevo,

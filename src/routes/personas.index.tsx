@@ -12,6 +12,8 @@ export const Route = createFileRoute("/personas/")({
       { name: "description", content: "Contactos de ISF con prioridad, estado y vínculos." },
       { property: "og:title", content: "Personas · ISF" },
       { property: "og:description", content: "Contactos de ISF con prioridad, estado y vínculos." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Personas,

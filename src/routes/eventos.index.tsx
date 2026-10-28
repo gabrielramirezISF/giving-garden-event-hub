@@ -12,6 +12,8 @@ export const Route = createFileRoute("/eventos/")({
       { name: "description", content: "Próximos y pasados eventos de ISF." },
       { property: "og:title", content: "Eventos · ISF" },
       { property: "og:description", content: "Próximos y pasados eventos de ISF." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Eventos,

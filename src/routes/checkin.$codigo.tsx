@@ -6,7 +6,7 @@ import { getEvento } from "@/lib/data";
 import { firstName, mockArrival, parseCheckinState, type CheckinState } from "@/lib/checkin";
 
 export const Route = createFileRoute("/checkin/$codigo")({
-  validateSearch: (search: Record<string, unknown>) => ({ estado: parseCheckinState(search.estado) }),
+  validateSearch: (search: Record<string, unknown>) => ({ estado: parseCheckinState(search["estado"]) }),
   loader: ({ params }) => {
     const evento = getEvento(params.codigo);
     if (!evento) throw notFound();

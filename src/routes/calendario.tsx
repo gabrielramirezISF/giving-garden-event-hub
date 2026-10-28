@@ -12,6 +12,8 @@ export const Route = createFileRoute("/calendario")({
       { name: "description", content: "Calendario mensual de eventos de ISF." },
       { property: "og:title", content: "Calendario · ISF" },
       { property: "og:description", content: "Calendario mensual de eventos de ISF." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Calendario,
